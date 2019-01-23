@@ -3,10 +3,15 @@
 ## Preview
 ![JSONViewer Preview 1](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
 ![JSONViewer Preview 2](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
+![JSONViewer Preview 3](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
+![JSONViewer Preview 4](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
 
 ## Installation
 ### Chrome Web Store
-[![https://github.com/oppoic/JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://github.com/oppoic/JSONViewer)
+[![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://github.com/oppoic/JSONViewer)
+
+### Download .crx file
+[Click to redirect](https://github.com/oppoic/JSONViewer/tree/master/crx/JSONViewer.crx)
 
 ### Chrome Extension Developer Mode
 1. Download project source code
