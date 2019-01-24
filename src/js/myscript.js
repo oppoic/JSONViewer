@@ -10,8 +10,15 @@ $(window).bind('resize', function () {
     }, 100);
 });
 
-
 function setHeight() {
     var wHeight = $(window).height();
     $("textarea").height(wHeight - 14);
 }
+
+$("body").on("click", ".tool-right i", function () {
+    console.log(this);
+    console.log($(this));
+
+
+
+});

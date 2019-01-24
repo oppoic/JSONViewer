@@ -35,3 +35,12 @@ textarea{
 .nopaddingleft{
     padding-left: 0px;
 }
+
+.tool-top i {
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.tool-right i {
+    cursor: pointer;
+}
