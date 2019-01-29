@@ -1,7 +1,7 @@
-var insertStrPre = '<div class="';
+var insertHtmlPre = '<div class="';
 var insertStylePre = 'col-xs-12 col-sm-6 ';
-var insertStr = ' mainBox"><div class="tool-top"><i class="fa fa-compress fa-lg" data-toggle="tooltip" data-placement="bottom" title="compress"></i><i class="fa fa-expand fa-lg" data-toggle="tooltip" data-placement="bottom" title="expand"></i><i class="fa fa-file-excel-o fa-lg" data-toggle="tooltip" data-placement="bottom" title="json to xml"></i><i class="fa fa-file-code-o fa-lg" data-toggle="tooltip" data-placement="bottom" title="xml to json"></i><i class="fa fa-trash fa-lg" data-toggle="tooltip" data-placement="bottom" title="delete"></i><i class="fa fa-download fa-lg" data-toggle="tooltip" data-placement="bottom" title="download"></i><i class="fa fa-copy fa-lg" data-toggle="tooltip" data-placement="bottom" title="copy"></i><i class="fa fa-close fa-lg pull-right" data-value="close" data-toggle="tooltip" data-placement="bottom"></i></div><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><textarea class="form-control"></textarea></div>';
-var insertStrNoClose = ' mainBox"><div class="tool-top"><i class="fa fa-compress fa-lg" data-toggle="tooltip" data-placement="bottom" title="compress"></i><i class="fa fa-expand fa-lg" data-toggle="tooltip" data-placement="bottom" title="expand"></i><i class="fa fa-file-excel-o fa-lg" data-toggle="tooltip" data-placement="bottom" title="json to xml"></i><i class="fa fa-file-code-o fa-lg" data-toggle="tooltip" data-placement="bottom" title="xml to json"></i><i class="fa fa-trash fa-lg" data-toggle="tooltip" data-placement="bottom" title="delete"></i><i class="fa fa-download fa-lg" data-toggle="tooltip" data-placement="bottom" title="download"></i><i class="fa fa-copy fa-lg" data-toggle="tooltip" data-placement="bottom" title="copy"></i></div><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><textarea class="form-control"></textarea></div>';
+var insertHtml = ' mainBox"><div class="tool-top"><i class="fa fa-file-excel-o fa-lg" data-toggle="tooltip" title="json to xml" data-value="xml"></i><i class="fa fa-file-code-o fa-lg" data-toggle="tooltip" title="xml to json" data-value="json"></i><i class="fa fa-download fa-lg" data-toggle="tooltip" title="download" data-value="download"></i><i class="fa fa-copy fa-lg" data-toggle="tooltip" title="copy" data-value="copy"></i><i class="fa fa-trash fa-lg" data-toggle="tooltip" title="delete" data-value="delete"></i><i class="fa fa-compress fa-lg" data-toggle="tooltip" title="compress" data-value="compress"></i><i class="fa fa-expand fa-lg" data-toggle="tooltip" title="expand" data-value="expand"></i><i class="fa fa-close fa-lg pull-right" data-toggle="tooltip" title="close" data-value="close"></i></div><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div contenteditable="plaintext-only" class="form-control editablediv"></div></div>';
+var insertHtmlNoClose = ' mainBox"><div class="tool-top"><i class="fa fa-file-excel-o fa-lg" data-toggle="tooltip" title="json to xml" data-value="xml"></i><i class="fa fa-file-code-o fa-lg" data-toggle="tooltip" title="xml to json" data-value="json"></i><i class="fa fa-download fa-lg" data-toggle="tooltip" title="download" data-value="download"></i><i class="fa fa-copy fa-lg" data-toggle="tooltip" title="copy" data-value="copy"></i><i class="fa fa-trash fa-lg" data-toggle="tooltip" title="delete" data-value="delete"></i><i class="fa fa-compress fa-lg" data-toggle="tooltip" title="compress" data-value="compress"></i><i class="fa fa-expand fa-lg" data-toggle="tooltip" title="expand" data-value="expand"></i></div><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div contenteditable="plaintext-only" class="form-control editablediv"></div></div>';
 
 $(function () {
     var maxBoxCount = getMaxBoxCount();
@@ -9,13 +9,12 @@ $(function () {
     currentBoxCount = currentBoxCount > maxBoxCount ? maxBoxCount : currentBoxCount;
 
     var showBoxCount = currentBoxCount == 0 ? maxBoxCount : currentBoxCount;
-
     var className = getClass(showBoxCount);
     for (i = 0; i < showBoxCount; i++) {
         if (i == 0)
-            $(".container-fluid .row").append(insertStrPre + insertStylePre + className + insertStrNoClose);
+            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtmlNoClose);
         else
-            $(".container-fluid .row").append(insertStrPre + insertStylePre + className + insertStr);
+            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
     }
 
     setHeight();
@@ -37,11 +36,11 @@ $(window).bind('resize', function () {
 
 function setHeight() {
     var wHeight = $(window).height();
-    $("textarea").height(wHeight - 70);
+    $("div.editablediv").height(wHeight - 70);
 }
 
 function toolTipInit() {
-    $("[data-toggle='tooltip']").tooltip();
+    $("[data-toggle='tooltip']").tooltip({ placement: "bottom" });
 }
 
 function addIconHideAndShow() {
@@ -67,30 +66,71 @@ function reSizeBoxes() {
 }
 
 $("body").on("click", ".tool-top i", function () {
-    console.log(this);
-    console.log($(this));
+    //console.log(this);
 
-    var dv = $(this)[0].attributes[1].nodeValue;
-    //console.log(dv);
-    if (dv == "close") {
-        $(this).parents(".mainBox").remove();
-        reSizeBoxes();
-        addIconHideAndShow();
+    var nv = this.attributes[3].nodeValue;
+    if (nv != undefined) {
+
+        if (nv == "xml") {
+
+        }
+        else if (nv == "json") {
+
+        }
+        else if (nv == "download") {
+
+        }
+        else if (nv == "copy") {
+
+        }
+        else if (nv == "delete") {
+
+        }
+        else if (nv == "compress") {
+
+        }
+        else if (nv == "expand") {
+            var editablediv = $(this).parents(".mainBox").children("div.editablediv");
+            var content = $.trim(editablediv.text());
+            //console.log(content);
+
+            try {
+                var jsonHtml = new JSONFormat(content, 4).toString();
+                //console.log(jsonHtml);
+
+                editablediv.html(jsonHtml);
+
+            } catch (e) {
+                console.log(e);
+                alert(e);
+            }
+        }
+        else if (nv == "close") {
+            $(this).parents(".mainBox").remove();
+
+            var mainBoxes = $(".container-fluid .mainBox");
+            localStorage.currentBoxCount = mainBoxes.length;
+
+            reSizeBoxes();
+            addIconHideAndShow();
+        }
+        else {
+            console.log("illegal operate");
+            console.log(this.attributes[3]);
+        }
     }
-
+    else {
+        console.log("nodeValue is undefined");
+    }
 });
 
 //add a box
 $("body").on("click", ".tool-right i", function () {
     var mainBoxes = $(".container-fluid .mainBox");
-    var className = getClass(mainBoxes.length);
-    $.each(mainBoxes, function (i, v) {
-        $(v).attr("class", insertStylePre + className + " mainBox");
-    })
-
-    $(this).parents(".mainBox").after(insertStrPre + insertStylePre + className + insertStr);
-
     localStorage.currentBoxCount = mainBoxes.length + 1;
+
+    $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
+    reSizeBoxes();
 
     setHeight();
     toolTipInit();

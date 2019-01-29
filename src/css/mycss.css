@@ -53,7 +53,7 @@
 }
 
 .tool-top i {
-    padding: 0px 6px;
+    padding: 0px 8px;
     cursor: pointer;
 }
 
@@ -67,7 +67,17 @@
     border-top-right-radius: 0;
 }
 
-textarea{
-    resize: none;
+.editablediv{
+    overflow-y: scroll;
 }
 
+/* .errortip{
+    max-height: 200px;
+    max-width: 250px;
+    background: #eee;
+    position: absolute;
+    right: 19px;
+    top: 3px;
+    display: inline-block;
+    word-break: keep-all;
+} */
