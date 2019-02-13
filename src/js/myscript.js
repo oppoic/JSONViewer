@@ -4,21 +4,39 @@ var insertHtml = ' mainBox"><div class="tool-top"><i class="fa fa-file-excel-o f
 var insertHtmlNoClose = ' mainBox"><div class="tool-top"><i class="fa fa-file-excel-o fa-lg" data-toggle="tooltip" title="json to xml" data-value="xml"></i><i class="fa fa-file-code-o fa-lg" data-toggle="tooltip" title="xml to json" data-value="json"></i><i class="fa fa-download fa-lg" data-toggle="tooltip" title="download" data-value="download"></i><i class="fa fa-copy fa-lg" data-toggle="tooltip" title="copy" data-value="copy"></i><i class="fa fa-trash fa-lg" data-toggle="tooltip" title="delete" data-value="delete"></i><i class="fa fa-compress fa-lg" data-toggle="tooltip" title="compress" data-value="compress"></i><i class="fa fa-expand fa-lg" data-toggle="tooltip" title="expand" data-value="expand"></i></div><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div contenteditable="plaintext-only" class="form-control editablediv"></div></div>';
 
 $(function () {
-    var maxBoxCount = getMaxBoxCount();
-    var currentBoxCount = localStorage.currentBoxCount == undefined ? 0 : parseInt(localStorage.currentBoxCount);
-    currentBoxCount = currentBoxCount > maxBoxCount ? maxBoxCount : currentBoxCount;
+    // var maxBoxCount = getMaxBoxCount();
+    // var jsonViewerBoxCount = localStorage.jsonViewerBoxCount == undefined ? 0 : parseInt(localStorage.jsonViewerBoxCount);
+    // jsonViewerBoxCount = jsonViewerBoxCount > maxBoxCount ? maxBoxCount : jsonViewerBoxCount;
 
-    var showBoxCount = currentBoxCount == 0 ? maxBoxCount : currentBoxCount;
-    var className = getClass(showBoxCount);
-    for (i = 0; i < showBoxCount; i++) {
-        if (i == 0)
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtmlNoClose);
-        else
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
-    }
+    // var showBoxCount = jsonViewerBoxCount == 0 ? maxBoxCount : jsonViewerBoxCount;
+    // var className = getClass(showBoxCount);
+    // for (i = 0; i < showBoxCount; i++) {
+    //     if (i == 0)
+    //         $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtmlNoClose);
+    //     else
+    //         $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
+    // }
+
+    // setHeight();
+    // toolTipInit();
+    // addIconHideAndShow();
+
+    var container1 = document.getElementById('container1');
+    var container2 = document.getElementById('container2');
+    var options = {
+        mode: 'code',
+        onError: function (err) {
+            alert(err.toString());
+        }
+    };
+
+    var editor1 = new JSONEditor(container1, options);
+    var editor2 = new JSONEditor(container2, options);
+
+    editor1.setText("");
+    editor2.setText("");
 
     setHeight();
-    toolTipInit();
     addIconHideAndShow();
 });
 
@@ -45,9 +63,9 @@ function toolTipInit() {
 
 function addIconHideAndShow() {
     var maxBoxCount = getMaxBoxCount();
-    var currentBoxCount = $(".container-fluid .mainBox").length;
+    var jsonViewerBoxCount = $(".container-fluid .mainBox").length;
 
-    if (currentBoxCount >= maxBoxCount) {
+    if (jsonViewerBoxCount >= maxBoxCount) {
         $(".container-fluid .tool-right").hide();
         $(".mainBox").css("padding-right", "10px");
     }
@@ -109,7 +127,7 @@ $("body").on("click", ".tool-top i", function () {
             $(this).parents(".mainBox").remove();
 
             var mainBoxes = $(".container-fluid .mainBox");
-            localStorage.currentBoxCount = mainBoxes.length;
+            localStorage.jsonViewerBoxCount = mainBoxes.length;
 
             reSizeBoxes();
             addIconHideAndShow();
@@ -127,7 +145,7 @@ $("body").on("click", ".tool-top i", function () {
 //add a box
 $("body").on("click", ".tool-right i", function () {
     var mainBoxes = $(".container-fluid .mainBox");
-    localStorage.currentBoxCount = mainBoxes.length + 1;
+    localStorage.jsonViewerBoxCount = mainBoxes.length + 1;
 
     $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
     reSizeBoxes();
