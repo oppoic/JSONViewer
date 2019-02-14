@@ -20,24 +20,6 @@ $(function () {
     setHeight();
     toolTipInit();
     addIconHideAndShow();
-
-    // var container1 = document.getElementById('container1');
-    // var container2 = document.getElementById('container2');
-    // var options = {
-    //     mode: 'code',
-    //     onError: function (err) {
-    //         alert(err.toString());
-    //     }
-    // };
-
-    // var editor1 = new JSONEditor(container1, options);
-    // var editor2 = new JSONEditor(container2, options);
-
-    // editor1.setText("");
-    // editor2.setText("");
-
-    // setHeight();
-    // addIconHideAndShow();
 });
 
 var resizeTimer = null;
@@ -110,7 +92,7 @@ $("body").on("click", ".tool-top i", function () {
         else if (nv == "expand") {
             var editablediv = $(this).parents(".mainBox").children("div.editablediv");
             var content = $.trim(editablediv.text());
-            //console.log(content);
+            console.log(content);
 
             try {
                 var jsonHtml = new JSONFormat(content, 4).toString();

@@ -4,40 +4,39 @@ var insertHtml = ' mainBox"><div class="tool-top"><i class="fa fa-file-excel-o f
 var insertHtmlNoClose = ' mainBox"><div class="tool-top"><i class="fa fa-file-excel-o fa-lg" data-toggle="tooltip" title="json to xml" data-value="xml"></i><i class="fa fa-file-code-o fa-lg" data-toggle="tooltip" title="xml to json" data-value="json"></i><i class="fa fa-download fa-lg" data-toggle="tooltip" title="download" data-value="download"></i><i class="fa fa-copy fa-lg" data-toggle="tooltip" title="copy" data-value="copy"></i><i class="fa fa-trash fa-lg" data-toggle="tooltip" title="delete" data-value="delete"></i><i class="fa fa-compress fa-lg" data-toggle="tooltip" title="compress" data-value="compress"></i><i class="fa fa-expand fa-lg" data-toggle="tooltip" title="expand" data-value="expand"></i></div><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div contenteditable="plaintext-only" class="form-control editablediv"></div></div>';
 
 $(function () {
-    var maxBoxCount = getMaxBoxCount();
-    var jsonViewerBoxCount = localStorage.jsonViewerBoxCount == undefined ? 0 : parseInt(localStorage.jsonViewerBoxCount);
-    jsonViewerBoxCount = jsonViewerBoxCount > maxBoxCount ? maxBoxCount : jsonViewerBoxCount;
+    // var maxBoxCount = getMaxBoxCount();
+    // var jsonViewerBoxCount = localStorage.jsonViewerBoxCount == undefined ? 0 : parseInt(localStorage.jsonViewerBoxCount);
+    // jsonViewerBoxCount = jsonViewerBoxCount > maxBoxCount ? maxBoxCount : jsonViewerBoxCount;
 
-    var showBoxCount = jsonViewerBoxCount == 0 ? maxBoxCount : jsonViewerBoxCount;
-    var className = getClass(showBoxCount);
-    for (i = 0; i < showBoxCount; i++) {
-        if (i == 0)
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtmlNoClose);
-        else
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
-    }
-
-    setHeight();
-    toolTipInit();
-    addIconHideAndShow();
-
-    // var container1 = document.getElementById('container1');
-    // var container2 = document.getElementById('container2');
-    // var options = {
-    //     mode: 'code',
-    //     onError: function (err) {
-    //         alert(err.toString());
-    //     }
-    // };
-
-    // var editor1 = new JSONEditor(container1, options);
-    // var editor2 = new JSONEditor(container2, options);
-
-    // editor1.setText("");
-    // editor2.setText("");
+    // var showBoxCount = jsonViewerBoxCount == 0 ? maxBoxCount : jsonViewerBoxCount;
+    // var className = getClass(showBoxCount);
+    // for (i = 0; i < showBoxCount; i++) {
+    //     if (i == 0)
+    //         $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtmlNoClose);
+    //     else
+    //         $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
+    // }
 
     // setHeight();
     // addIconHideAndShow();
+
+    var container1 = document.getElementById('container1');
+    var container2 = document.getElementById('container2');
+    var options = {
+        mode: 'code',
+        onError: function (err) {
+            alert(err.toString());
+        }
+    };
+
+    var editor1 = new JSONEditor(container1, options);
+    var editor2 = new JSONEditor(container2, options);
+
+    editor1.setText("");
+    editor2.setText("");
+
+    setHeight();
+    //addIconHideAndShow();
 });
 
 var resizeTimer = null;
@@ -48,17 +47,13 @@ $(window).bind('resize', function () {
 
     resizeTimer = setTimeout(function () {
         setHeight();
-        addIconHideAndShow();
+        //addIconHideAndShow();
     }, 300);
 });
 
 function setHeight() {
     var wHeight = $(window).height();
-    $("div.editablediv").height(wHeight - 70);
-}
-
-function toolTipInit() {
-    $("[data-toggle='tooltip']").tooltip({ placement: "bottom" });
+    $("#container1,#container2").height(wHeight);
 }
 
 function addIconHideAndShow() {
@@ -130,7 +125,7 @@ $("body").on("click", ".tool-top i", function () {
             localStorage.jsonViewerBoxCount = mainBoxes.length;
 
             reSizeBoxes();
-            addIconHideAndShow();
+            //addIconHideAndShow();
         }
         else {
             console.log("illegal operate");
@@ -151,8 +146,7 @@ $("body").on("click", ".tool-right i", function () {
     reSizeBoxes();
 
     setHeight();
-    toolTipInit();
-    addIconHideAndShow();
+    //addIconHideAndShow();
 });
 
 function getClass(boxCount) {
