@@ -72,22 +72,22 @@ $("body").on("click", ".tool-top i", function () {
     if (nv != undefined) {
 
         if (nv == "xml") {
-
+            console.log(nv);
         }
         else if (nv == "json") {
-
+            console.log(nv);
         }
         else if (nv == "download") {
-
+            console.log(nv);
         }
         else if (nv == "copy") {
-
+            console.log(nv);
         }
         else if (nv == "delete") {
-
+            console.log(nv);
         }
         else if (nv == "compress") {
-
+            console.log(nv);
         }
         else if (nv == "expand") {
             var editablediv = $(this).parents(".mainBox").children("div.editablediv");
@@ -150,8 +150,14 @@ function getClass(boxCount) {
             classNames = "col-md-4 col-lg-4";
             break;
         case 4:
-        default:
             classNames = "col-md-3 col-lg-3";
+            break;
+        case 5:
+            classNames = "col-md-1-5 col-lg-1-5";
+            break;
+        case 6:
+        default:
+            classNames = "col-md-2 col-lg-2";
             break;
     }
     return classNames;
@@ -175,10 +181,10 @@ function getMaxBoxCount() {
         maxBoxCount = 4;
     }
     else if (screenWidth >= 3840 && screenWidth < 5120) {//5k
-        maxBoxCount = 4;
+        maxBoxCount = 5;
     }
     else if (screenWidth >= 5120) {//5k+
-        maxBoxCount = 4;
+        maxBoxCount = 6;
     }
     return maxBoxCount;
 }

@@ -23,7 +23,8 @@
 
 ## Thanks
 * [Bootstrap](https://getbootstrap.com/)
-* [Ace Editor](https://github.com/ajaxorg/ace)
+* [ace](https://github.com/ajaxorg/ace)
+* [jsoneditor](https://github.com/josdejong/jsoneditor)
 
 ## License
 See [LICENSE](https://github.com/oppoic/JSONViewer/blob/master/LICENSE) for more details.
