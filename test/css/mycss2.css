@@ -1,5 +1,7 @@
 .mainBox{
+    position: relative;
     padding: 0px 30px 0px 10px;
+    box-sizing: border-box;
 }
 
 .tool-right{
@@ -11,6 +13,7 @@
 .tool-right i {
     cursor: pointer;
     display: block;
+    margin-bottom: 10px;
 }
 
 .col-md-1-5,
@@ -25,6 +28,7 @@
     .col-md-1-5 {
         width: 20%;
         float: left;
+        padding-right: 30px;
     }
 }
 
@@ -32,5 +36,6 @@
     .col-lg-1-5 {
         width: 20%;
         float: left;
+        padding-right: 30px;
     }
 }

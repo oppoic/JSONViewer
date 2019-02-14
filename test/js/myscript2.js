@@ -106,8 +106,6 @@ $("body").on("click", ".tool-right i", function () {
             $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
 
             var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
-            //console.log(boxAdd);
-
             var editor = new JSONEditor(boxAdd[0], options);
             editor.setText("");
 
