@@ -172,7 +172,7 @@ function getMaxBoxCount() {
         maxBoxCount = 2;
     }
     else if (screenWidth >= 1920 && screenWidth < 2560) {//2k
-        maxBoxCount = 6;
+        maxBoxCount = 3;
     }
     else if (screenWidth >= 2560 && screenWidth < 3840) {//4k
         maxBoxCount = 4;
