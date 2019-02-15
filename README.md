@@ -11,7 +11,7 @@
 [![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://github.com/oppoic/JSONViewer)
 
 ### Download .crx file
-[Click to redirect](https://github.com/oppoic/JSONViewer/tree/master/crx/JSONViewer.crx)
+[Click to download](https://github.com/oppoic/JSONViewer/tree/master/crx/JSONViewer.crx)
 
 ### Chrome Extension Developer Mode
 1. Download project source code
