@@ -53,6 +53,11 @@ $(function () {
     });
     setHeight();
     addIconHideAndShow();
+
+    //console.log($("div.jsoneditor-mode-code .jsoneditor-menu a"));
+    $("div.jsoneditor-mode-code .jsoneditor-menu a").remove();
+
+    
 });
 
 var resizeTimer = null;
