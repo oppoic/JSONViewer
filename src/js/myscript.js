@@ -1,7 +1,11 @@
 var insertHtmlPre = '<div class="';
 var insertStylePre = 'col-xs-12 col-sm-6 ';
-var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg" data-value="add"></i><i class="fa fa-close fa-lg" data-value="close"></i></div><div data-tgt="container"></div></div>';
-var insertHtmlNoClose = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg" data-value="add"></i></div><div data-tgt="container"></div></div>';
+var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div data-tgt="container"></div></div>';
+
+var jsonMenuRight = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button><button type="button" title="Close" data-value="close"><i class="fa fa-close"></i></button></div>';
+var jsonMenuRightNoClose = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button></div>';
+
+var editorArr = [];
 
 var options = {
     mode: 'code',
@@ -20,12 +24,7 @@ $(function () {
     var className = getClass(showBoxCount);
 
     for (i = 0; i < showBoxCount; i++) {
-        if (i == 0) {
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtmlNoClose);
-        }
-        else {
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
-        }
+        $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
     }
 
     var cnr = $("[data-tgt='container']");
@@ -33,9 +32,23 @@ $(function () {
     $.each(cnr, function (i, v) {
         editor = new JSONEditor(v, options);
         editor.setText("");
+
+        editorArr.push(editor);
     });
     setHeight();
     addIconHideAndShow();
+
+    $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
+
+    var jsonMenus = $("div.jsoneditor-mode-code .jsoneditor-menu");
+    $.each(jsonMenus, function (i, v) {
+        if (i == 0) {
+            $(v).append(jsonMenuRightNoClose);
+        }
+        else {
+            $(v).append(jsonMenuRight);
+        }
+    });
 });
 
 var resizeTimer = null;
@@ -60,12 +73,12 @@ function addIconHideAndShow() {
     var jsonViewerBoxCount = $(".container-fluid .mainBox").length;
 
     if (jsonViewerBoxCount >= maxBoxCount) {
-        $(".tool-right [data-value='add']").hide();
-        $(".mainBox").eq(0).css("padding-right", "10px");
+        $(".tool-right").hide();
+        $(".mainBox").css("padding-right", "10px");
     }
     else {
-        $(".tool-right [data-value='add']").show();
-        $(".mainBox").eq(0).css("padding-right", "30px");
+        $(".tool-right").show();
+        $(".mainBox").css("padding-right", "30px");
     }
 }
 
@@ -78,28 +91,51 @@ function reSizeBoxes() {
 }
 
 $("body").on("click", ".tool-right i", function () {
-    //console.log(this);
+    var mainBoxes = $(".container-fluid .mainBox");
+    localStorage.jsonViewerBoxCount = mainBoxes.length + 1;
 
-    var nv = this.attributes[1].nodeValue;
+    $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
+
+    var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
+    var editor = new JSONEditor(boxAdd[0], options);
+    editor.setText("");
+
+    var idx = $(this).parents(".mainBox").next().index();
+    //var idx = $(".container-fluid .mainBox").index($(this).parents(".mainBox").next());
+    editorArr.splice(idx, 0, editor);
+
+    reSizeBoxes();
+    setHeight();
+    addIconHideAndShow();
+
+    $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
+    $(this).parents(".mainBox").next().find(".jsoneditor-menu").append(jsonMenuRight);
+});
+
+$("body").on("click", ".btn-group-right button", function () {
+    var nv = this.attributes[2].nodeValue;
     if (nv != undefined) {
-        if (nv == "add") {
-            var mainBoxes = $(".container-fluid .mainBox");
-            localStorage.jsonViewerBoxCount = mainBoxes.length + 1;
+        var idx = $(this).parents(".mainBox").index();
 
-            $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
+        if (nv == "clear") {
+            editorArr[idx].setText('');
 
-            var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
-            var editor = new JSONEditor(boxAdd[0], options);
-            editor.setText("");
+        }
+        else if (nv == "copy") {
+            console.log(editorArr[idx].get());
 
-            reSizeBoxes();
 
-            setHeight();
-            addIconHideAndShow();
+        }
+        else if (nv == "download") {
+
         }
         else if (nv == "close") {
-            //editor.destroy();
-            $(this).parents(".mainBox").remove();
+            var parentMainBox = $(this).parents(".mainBox");
+            var idx = $(this).parents(".mainBox").index();
+            editorArr[idx].destroy();
+            parentMainBox.remove();
+
+            editorArr.splice(idx, 1);
 
             var mainBoxes = $(".container-fluid .mainBox");
             localStorage.jsonViewerBoxCount = mainBoxes.length;
@@ -115,6 +151,12 @@ $("body").on("click", ".tool-right i", function () {
     else {
         console.log("nodeValue is undefined");
     }
+});
+
+$("body").on("click", ".btn-group-right a", function () {
+    console.log("sample json data");
+
+
 });
 
 function getClass(boxCount) {
@@ -145,7 +187,6 @@ function getClass(boxCount) {
 
 function getMaxBoxCount() {
     var screenWidth = window.screen.width;
-    // console.log(screenWidth);
 
     var maxBoxCount = 0;
     if (screenWidth < 1024) {
