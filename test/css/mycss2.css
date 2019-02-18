@@ -13,9 +13,39 @@
 .tool-right i {
     cursor: pointer;
     display: block;
-    margin-bottom: 10px;
 }
 
+.btn-group-right {
+    float: right;
+}
+
+.btn-group-right a{
+    width: 45px;
+    margin: 8px 2px 0px 0px;
+    padding: 0;    
+}
+
+div.btn-group-right>button {
+    width: 26px;
+    height: 26px;
+    margin: 2px;
+    padding: 0;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    background-color:#3883fa;
+    font-family: arial,sans-serif;
+}
+
+div.btn-group-right>button:hover {
+    background-color: rgba(255,255,255,.2);
+    border: 1px solid rgba(255,255,255,.4)
+}
+
+div.btn-group-right>button:active,div.btn-group-right>button:focus {
+    background-color: rgba(255,255,255,.3)
+}
+
+/*Bootstrap 5/12*/
 .col-md-1-5,
 .col-lg-1-5 {
     position: relative;
