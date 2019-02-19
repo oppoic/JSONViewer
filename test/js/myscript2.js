@@ -44,6 +44,7 @@ $(function () {
         $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
     }
 
+    /*jsoneditor init*/
     var cnr = $("[data-tgt='container']");
     var editor;
     $.each(cnr, function (i, v) {
@@ -65,6 +66,12 @@ $(function () {
         else {
             $(v).append(jsonMenuRight);
         }
+    });
+
+    /*copy to clipboard init*/
+    var copyBtn = $(".btn-group-right button[data-value='copy']");
+    $.each(copyBtn, function (i, v) {
+        new ClipboardJS(v);
     });
 });
 
@@ -136,14 +143,15 @@ $("body").on("click", ".btn-group-right button", function () {
 
         if (nv == "clear") {
             editorArr[idx].setText('');
-
         }
         else if (nv == "copy") {
-            console.log(editorArr[idx].get());
+            console.log(editorArr[idx].getText());
 
 
         }
         else if (nv == "download") {
+            console.log(editorArr[idx].getText());
+
 
         }
         else if (nv == "close") {
