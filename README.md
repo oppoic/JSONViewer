@@ -11,7 +11,7 @@
 [![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://github.com/oppoic/JSONViewer)
 
 ### Download .crx file
-[Click to download](https://github.com/oppoic/JSONViewer/tree/master/crx/JSONViewer.crx)
+[Click to redirect](https://github.com/oppoic/JSONViewer/tree/master/crx/)
 
 ### Chrome Extension Developer Mode
 1. Download project source code
@@ -25,6 +25,9 @@
 * [Bootstrap](https://getbootstrap.com/)
 * [ace](https://github.com/ajaxorg/ace)
 * [jsoneditor](https://github.com/josdejong/jsoneditor)
+* [clipboard-polyfill](https://github.com/lgarron/clipboard-polyfill)
+* [FileSaver.js](https://github.com/eligrey/FileSaver.js)
+* [toastr](https://github.com/CodeSeven/toastr)
 
 ## License
 See [LICENSE](https://github.com/oppoic/JSONViewer/blob/master/LICENSE) for more details.

@@ -5,13 +5,11 @@ var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg">
 var jsonMenuRight = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Paste" data-value="paste"><i class="fa fa-paste"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button><button type="button" title="Close" data-value="close"><i class="fa fa-close"></i></button></div>';
 var jsonMenuRightNoClose = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Paste" data-value="paste"><i class="fa fa-paste"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button></div>';
 
-var editorArr = [];
-
-var options = {
+var jsonEditorArr = [];
+var jsonEditorOptions = {
     mode: 'code',
     onError: function (err) {
-        console.log(err.toString());
-        alert(err.toString());
+        showTip(4, err.toString());
     }
 };
 
@@ -30,10 +28,10 @@ $(function () {
     var cnr = $("[data-tgt='container']");
     var editor;
     $.each(cnr, function (i, v) {
-        editor = new JSONEditor(v, options);
+        editor = new JSONEditor(v, jsonEditorOptions);
         editor.setText("");
 
-        editorArr.push(editor);
+        jsonEditorArr.push(editor);
     });
     setHeight();
     addIconHideAndShow();
@@ -97,11 +95,11 @@ $("body").on("click", ".tool-right i", function () {
     $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
 
     var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
-    var editor = new JSONEditor(boxAdd[0], options);
+    var editor = new JSONEditor(boxAdd[0], jsonEditorOptions);
     editor.setText("");
 
     var idx = $(this).parents(".mainBox").next().index();
-    editorArr.splice(idx, 0, editor);
+    jsonEditorArr.splice(idx, 0, editor);
 
     reSizeBoxes();
     setHeight();
@@ -117,29 +115,32 @@ $("body").on("click", ".btn-group-right button", function () {
         var idx = $(this).parents(".mainBox").index();
 
         if (nv == "clear") {
-            editorArr[idx].setText('');
+            jsonEditorArr[idx].setText('');
         }
         else if (nv == "copy") {
-            clipboard.writeText(editorArr[idx].getText()).then(function () {
-                console.log("copy success");
-
-
-            }, function (err) {
-                console.log(err);
-
-            });
+            var jsonCopy = jsonEditorArr[idx].getText();
+            if (jsonCopy == "") {
+                showTip(3, "Can't find any Content");
+            }
+            else {
+                clipboard.writeText(jsonCopy).then(function () {
+                    showTip(1, "Copied to Clipboard");
+                }, function (err) {
+                    showTip(4, err);
+                });
+            }
         }
         else if (nv == "paste") {
             clipboard.readText().then(function (result) {
-                editorArr[idx].setText(result);
+                jsonEditorArr[idx].setText(result);
             }, function (err) {
-                console.log(err);
+                showTip(4, err);
             });
         }
         else if (nv == "download") {
-            var jsonDl = editorArr[idx].getText();
+            var jsonDl = jsonEditorArr[idx].getText();
             if (jsonDl == "") {
-                alert("string.empty");
+                showTip(3, "Can't find any Content");
             }
             else {
                 var blob = new Blob([jsonDl], { type: "text/plain;charset=utf-8" });
@@ -149,10 +150,10 @@ $("body").on("click", ".btn-group-right button", function () {
         else if (nv == "close") {
             var parentMainBox = $(this).parents(".mainBox");
             var idx = $(this).parents(".mainBox").index();
-            editorArr[idx].destroy();
+            jsonEditorArr[idx].destroy();
             parentMainBox.remove();
 
-            editorArr.splice(idx, 1);
+            jsonEditorArr.splice(idx, 1);
 
             var mainBoxes = $(".container-fluid .mainBox");
             localStorage.jsonViewerBoxCount = mainBoxes.length;
@@ -171,9 +172,8 @@ $("body").on("click", ".btn-group-right button", function () {
 });
 
 $("body").on("click", ".btn-group-right a", function () {
-    console.log("sample json data");
-
-
+    var idx = $(this).parents(".mainBox").index();
+    jsonEditorArr[idx].set(samplejson[Math.floor((Math.random() * samplejson.length))]);
 });
 
 function getClass(boxCount) {
@@ -256,4 +256,47 @@ function getNowFormatDate() {
     }
 
     return date.getFullYear() + seperator1 + month + seperator1 + strDate + "_" + hour + seperator2 + minutes + seperator2 + seconds;
+}
+
+function showTip(type, msg) {
+    toastr.clear();
+
+    var level = '';
+    var timeout = 0;
+    var msgDefault = '';
+    switch (type) {
+        case 1:
+        default:
+            level = 'success';
+            timeout = 3000;
+            msgDefault = 'success';
+            break;
+        case 2:
+            level = 'info';
+            timeout = 5000;
+            msgDefault = 'info';
+            break;
+        case 3:
+            level = 'warning';
+            timeout = 5000;
+            msgDefault = 'warning';
+            break;
+        case 4:
+            level = 'error';
+            timeout = 10000;
+            msgDefault = 'error';
+            break;
+    }
+
+    toastr.options = {
+        "positionClass": "toast-bottom-right",
+        "timeOut": timeout
+    }
+
+    if (msg == undefined || msg == '') {
+        toastr[level](msgDefault);
+    }
+    else {
+        toastr[level](msg);
+    }
 }
