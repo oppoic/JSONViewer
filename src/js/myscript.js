@@ -2,8 +2,8 @@ var insertHtmlPre = '<div class="';
 var insertStylePre = 'col-xs-12 col-sm-6 ';
 var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div data-tgt="container"></div></div>';
 
-var jsonMenuRight = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button><button type="button" title="Close" data-value="close"><i class="fa fa-close"></i></button></div>';
-var jsonMenuRightNoClose = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button></div>';
+var jsonMenuRight = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Paste" data-value="paste"><i class="fa fa-paste"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button><button type="button" title="Close" data-value="close"><i class="fa fa-close"></i></button></div>';
+var jsonMenuRightNoClose = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Paste" data-value="paste"><i class="fa fa-paste"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button></div>';
 
 var editorArr = [];
 
@@ -119,14 +119,28 @@ $("body").on("click", ".btn-group-right button", function () {
 
         if (nv == "clear") {
             editorArr[idx].setText('');
-
         }
         else if (nv == "copy") {
-            console.log(editorArr[idx].get());
+            clipboard.writeText(editorArr[idx].getText()).then(function () {
+                console.log("copy success");
 
 
+            }, function (err) {
+                console.log(err);
+
+
+            });
+        }
+        else if (nv == "paste") {
+            clipboard.readText().then(function (result) {
+                editorArr[idx].setText(result);
+            }, function (err) {
+                console.log(err);
+            });
         }
         else if (nv == "download") {
+            //console.log(editorArr[idx].getText());
+
 
         }
         else if (nv == "close") {
