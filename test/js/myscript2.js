@@ -1,5 +1,5 @@
 var insertHtmlPre = '<div class="';
-var insertStylePre = 'col-xs-12 col-sm-6 ';
+var insertStylePre = 'col-xs-12 col-sm-12 ';
 var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div data-tgt="container"></div></div>';
 
 var jsonMenuRight = '<div class="btn-group-right"><a href="javascript:;" title="Sample JSON">sample</a><button type="button" title="Clear" data-value="clear"><i class="fa fa-eraser"></i></button><button type="button" title="Copy" data-value="copy"><i class="fa fa-copy"></i></button><button type="button" title="Paste" data-value="paste"><i class="fa fa-paste"></i></button><button type="button" title="Download" data-value="download"><i class="fa fa-download"></i></button><button type="button" title="Close" data-value="close"><i class="fa fa-close"></i></button></div>';
@@ -203,7 +203,7 @@ function getClass(boxCount) {
 }
 
 function getMaxBoxCount() {
-    var screenWidth = window.screen.width;
+    var screenWidth = $(window).width();
 
     var maxBoxCount = 0;
     if (screenWidth < 1024) {
