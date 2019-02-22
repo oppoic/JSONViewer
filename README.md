@@ -1,5 +1,8 @@
 # JSONViewer
 
+## Description
+format several JSON documents in one window, depends to your screen width, up to 6.
+
 ## Preview
 ![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.png)
 
