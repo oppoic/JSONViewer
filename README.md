@@ -1,14 +1,11 @@
 # JSONViewer
 
 ## Preview
-![JSONViewer Preview 1](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
-![JSONViewer Preview 2](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
-![JSONViewer Preview 3](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
-![JSONViewer Preview 4](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)
+![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.png)
 
 ## Installation
 ### Chrome Web Store
-[![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://github.com/oppoic/JSONViewer)
+[![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ### Download .crx file
 [Click to redirect](https://github.com/oppoic/JSONViewer/tree/master/crx/JSONViewer.crx)

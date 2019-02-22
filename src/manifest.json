@@ -1,6 +1,6 @@
 {
   "name": "JSONViewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "make JSON documents easy to read",
   "icons": {
     "16": "images/16.png",

@@ -7,7 +7,7 @@ var samplejson = [
             "https://github.com/oppoic/JSONViewer",
             "https://github.com/oppoic/JSONViewer.git",
             "https://github.com/oppoic/JSONViewer/issues",
-            "chrome web store address"
+            "https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca"
         ]
     },
     {
