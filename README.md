@@ -8,7 +8,7 @@ format several JSON documents in one window, depends to your screen width, up to
 
 ## Installation
 ### Chrome Web Store
-[![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ### Download .crx file
 [Click to Download](https://github.com/oppoic/JSONViewer/raw/master/crx/JSONViewer.crx)
