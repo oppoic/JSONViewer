@@ -11,7 +11,7 @@ format several JSON documents in one window, depends to your screen width, up to
 [![JSONViewer](https://github.com/oppoic/JSONViewer/blob/master/pic/cws.png)](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ### Download .crx file
-[Click to redirect](https://github.com/oppoic/JSONViewer/tree/master/crx/JSONViewer.crx)
+[Click to Download](https://github.com/oppoic/JSONViewer/raw/master/crx/JSONViewer.crx)
 
 ### Chrome Extension Developer Mode
 1. Download project source code
