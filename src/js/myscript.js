@@ -86,6 +86,12 @@ function reSizeBoxes() {
     $.each(mainBoxes, function (i, v) {
         $(v).attr("class", insertStylePre + className + " mainBox");
     });
+    $.each(jsonEditorArr, function (i, v) {
+        if (v.getText() != '') {
+            var currentBox = $('.container-fluid .mainBox')[i];
+            $(currentBox).find('.jsoneditor-menu button.jsoneditor-format').click();
+        }
+    });
 }
 
 $("body").on("click", ".tool-right i", function () {

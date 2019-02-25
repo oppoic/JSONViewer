@@ -83,5 +83,17 @@ var samplejson = [
             { "id": 7, "guid": "89f67928-7515-459d-927b-67847c49bdea", "name": "wujiu", "class": "class 4" },
             { "id": 8, "guid": "05011809-720f-4114-bfef-93afe6b2d1d4", "name": "zhengshi", "class": "class 5" },
         ]
+    },
+    {
+        "companies": ["IBM", "Microsoft", "Oracle", "Accenture", "HP Enterprise", "SAP", "Tata Consultancy Services"]
+    },
+    {
+        "program languages": ["Java", "C", "Python", "C++", "Visual Basic .NET", "Javascript", "C#", "PHP", "SQL", "Objective-C", "MATLAB", "R", "Perl", "Assembly language", "Swift", "Go", "Delphi/Object Pascal", "Ruby", "PL/SQL", "Visual Basic"]
+    },
+    {
+        "subjects": ["maths", "chinese", "english", "physics", "chemistry", "politics", "history", "geography", "biology", "music", "form", "calligraphy", "arts", "science", "physical education"]
+    },
+    {
+        "animals": ["dog", "cat", "horse", "lion", "deer", "leopard", "donkey", "kangaroo", "ox", "hedgehog", "sheep", "rhinoceros", "camel", "monkey", "elephant", "snake", "rabbit", "frog", "duck", "tortoise", "goose", "fox", "panda", "squirrel"]
     }
 ]
