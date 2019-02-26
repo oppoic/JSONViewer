@@ -57,6 +57,7 @@ $(window).bind('resize', function () {
 
     resizeTimer = setTimeout(function () {
         setHeight();
+        reFormatJson();
         addIconHideAndShow();
     }, 300);
 });
@@ -86,6 +87,10 @@ function reSizeBoxes() {
     $.each(mainBoxes, function (i, v) {
         $(v).attr("class", insertStylePre + className + " mainBox");
     });
+    reFormatJson();
+}
+
+function reFormatJson() {
     $.each(jsonEditorArr, function (i, v) {
         if (v.getText() != '') {
             var currentBox = $('.container-fluid .mainBox')[i];

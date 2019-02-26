@@ -22,7 +22,7 @@ format several JSON documents in one window, depends to your screen width, up to
 6. OK
 
 ## Thanks
-* [Bootstrap](https://getbootstrap.com/)
+* [Bootstrap](https://github.com/twbs/bootstrap)
 * [ace](https://github.com/ajaxorg/ace)
 * [jsoneditor](https://github.com/josdejong/jsoneditor)
 * [clipboard-polyfill](https://github.com/lgarron/clipboard-polyfill)
