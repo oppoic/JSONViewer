@@ -1,3 +1,5 @@
+**英文** | [中文](README.zh-cn.md)
+
 # JSONViewer
 
 ## Description
