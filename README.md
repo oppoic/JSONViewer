@@ -1,4 +1,4 @@
-**英文** | [中文](README.zh-cn.md)
+**English Version** | [中文](README.zh-cn.md)
 
 # JSONViewer
 
