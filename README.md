@@ -5,7 +5,7 @@
 ## Description
 format several JSON documents in one window, depends to your screen width, up to 6.
 
-## master branch
+## master Branch
 Source code of JSONViewer Chrome Extension.
 
 ## Preview
@@ -13,11 +13,11 @@ Source code of JSONViewer Chrome Extension.
 ![Preview](/pic/jsonviewer.gif)
 
 ## Installation(choose one of three)
-* Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-* Download .crx file [Click to Download](/crx/JSONViewer.crx)
+#### Download .crx file [Click to Download](/crx/JSONViewer.crx)
 
-* Chrome Extension Developer Mode
+#### Chrome Extension Developer Mode
 1. Download project source code
 2. Open Chrome and go to: chrome://extensions/
 3. Enable "Developer mode"
