@@ -9,7 +9,7 @@
 请切换分支查看对应源码。
 
 ## 预览图
-![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.gif)
+![JSONViewer Preview](/pic/jsonviewer.gif)
 
 ## 安装
 谷歌Chrome应用商店 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
@@ -29,7 +29,7 @@
 * [toastr](https://github.com/CodeSeven/toastr)
 
 ## License
-See [LICENSE](https://github.com/oppoic/JSONViewer/blob/guide/LICENSE) for more details.
+See [LICENSE](LICENSE) for more details.
 
 # 扩展阅读
 请右键 - 在新标签页打开：https://www.cnblogs.com/oppoic/p/10444012.html

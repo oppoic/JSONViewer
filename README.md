@@ -9,7 +9,7 @@ format several JSON documents in one window, depends to your screen width, up to
 Please change branch to check the source code.
 
 ## Preview
-![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.gif)
+![JSONViewer Preview](/pic/jsonviewer.gif)
 
 ## Installation
 Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
@@ -29,4 +29,4 @@ Firefox Browser ADD-ONS [Click to Redirect](https://chrome.google.com/webstore/d
 * [toastr](https://github.com/CodeSeven/toastr)
 
 ## License
-See [LICENSE](https://github.com/oppoic/JSONViewer/blob/guide/LICENSE) for more details.
+See [LICENSE](LICENSE) for more details.
