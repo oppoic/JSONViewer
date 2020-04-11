@@ -9,7 +9,7 @@ format several JSON documents in one window, depends to your screen width, up to
 Please change branch to check the source code.
 
 ## Preview
-![JSONViewer Preview](/pic/jsonviewer.gif)
+![Preview](/pic/jsonviewer.gif)
 
 ## Installation
 Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)

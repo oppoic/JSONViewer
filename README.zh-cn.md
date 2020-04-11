@@ -8,8 +8,8 @@
 ## 源码
 请切换分支查看对应源码。
 
-## 预览图
-![JSONViewer Preview](/pic/jsonviewer.gif)
+## 预览
+![预览](/pic/jsonviewer.gif)
 
 ## 安装
 谷歌Chrome应用商店 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
@@ -28,8 +28,8 @@
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js)
 * [toastr](https://github.com/CodeSeven/toastr)
 
-## License
-See [LICENSE](LICENSE) for more details.
+## LICENSE
+点击查看 [软件许可](LICENSE)
 
 # 扩展阅读
 请右键 - 在新标签页打开：https://www.cnblogs.com/oppoic/p/10444012.html
