@@ -19,7 +19,7 @@ Please change branch to check the source code.
 
 #### Firefox Browser ADD-ONS [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-#### 360 Extension Market [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### 360 Browser Extension Market [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ## Thanks
 1. [Bootstrap](https://github.com/twbs/bootstrap)
