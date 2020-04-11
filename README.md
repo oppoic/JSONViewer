@@ -13,7 +13,7 @@ Source code of JSONViewPro Firefox Add-on.
 ![Preview](/pic/jsonviewer.gif)
 
 ## Installation
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+[Click to Redirect](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 
 ## Thanks
 1. [Bootstrap](https://github.com/twbs/bootstrap)
