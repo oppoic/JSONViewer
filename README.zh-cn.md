@@ -17,7 +17,7 @@
 
 #### 微软Edge外接程序 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-#### 火狐浏览器附加组件 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### 火狐浏览器附加组件 [点击前往](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 
 #### 360浏览器应用市场 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 

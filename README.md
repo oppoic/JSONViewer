@@ -17,7 +17,7 @@ Please change branch to check the source code.
 
 #### Microsoft Edge Addons [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-#### Firefox Browser ADD-ONS [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### Firefox Browser ADD-ONS [Click to Redirect](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 
 #### 360 Browser Extension Market [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
