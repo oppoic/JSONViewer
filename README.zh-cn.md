@@ -2,6 +2,9 @@
 
 # JSONViewer
 
+## 源码
+请切换分支查看对应源码。
+
 ## 简介
 在一个页面同时格式化多条Json字符串，最大支持6个窗口。
 
@@ -32,5 +35,5 @@
 ## License
 See [LICENSE](https://github.com/oppoic/JSONViewer/blob/guide/LICENSE) for more details.
 
-## 扩展阅读
+# 扩展阅读
 请右键 - 在新标签页打开：https://www.cnblogs.com/oppoic/p/10444012.html
