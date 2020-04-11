@@ -1,7 +1,7 @@
 {
   "name": "JSONViewer",
   "version": "1.0.3",
-  "description": "format several JSON documents in one window, depends to your screen width, up to 6.",
+  "description": "同时格式化多条Json字符串，在一个页面最大支持6个编辑器，取决于显示器宽度。",
   "icons": {
     "16": "images/16.png",
     "48": "images/48.png",
@@ -18,5 +18,6 @@
     "persistent": false
   },
   "offline_enabled": true,
-  "manifest_version": 2
+  "manifest_version": 2,
+  "update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query"
 }

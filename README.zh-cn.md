@@ -5,8 +5,8 @@
 ## 简介
 同时格式化多条Json字符串，在一个页面最大支持6个编辑器，取决于显示器宽度。
 
-## edge分支
-微软Edge浏览器JSONViewer插件源码。
+## 360分支
+360浏览器JSONViewer插件源码。
 
 ## 预览
 ![预览](/pic/jsonviewer.png)
