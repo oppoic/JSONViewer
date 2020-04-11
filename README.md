@@ -2,11 +2,11 @@
 
 # JSONViewer
 
-## Source Code
-Please change branch to check the source code.
-
 ## Description
 format several JSON documents in one window, depends to your screen width, up to 6.
+
+## Source Code
+Please change branch to check the source code.
 
 ## Preview
 ![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.gif)

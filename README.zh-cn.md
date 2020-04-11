@@ -2,11 +2,11 @@
 
 # JSONViewer
 
-## 源码
-请切换分支查看对应源码。
-
 ## 简介
 在一个页面同时格式化多条Json字符串，最大支持6个窗口。
+
+## 源码
+请切换分支查看对应源码。
 
 ## 预览图
 ![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.gif)
