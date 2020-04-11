@@ -28,8 +28,8 @@
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js)
 * [toastr](https://github.com/CodeSeven/toastr)
 
-## LICENSE
-点击查看 [软件许可](LICENSE)
+## 软件许可
+[点击查看](LICENSE)
 
 # 扩展阅读
 请右键 - 在新标签页打开：https://www.cnblogs.com/oppoic/p/10444012.html
