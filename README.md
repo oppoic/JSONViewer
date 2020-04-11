@@ -15,7 +15,7 @@ Source code of JSONViewer Chrome Extension.
 ## Installation(choose one of three)
 #### Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-#### Download .crx file [Click to Download](/crx/JSONViewer.crx)
+#### Download .crx file [Click to Redirect](/crx/JSONViewer.crx)
 
 #### Chrome Extension Developer Mode
 1. Download project source code
