@@ -12,17 +12,13 @@ Please change branch to check the source code.
 ![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.gif)
 
 ## Installation
-### Chrome Web Store
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### Microsoft Edge Addons
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+Microsoft Edge Addons [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### Firefox Browser ADD-ONS
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+Firefox Browser ADD-ONS [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### 360 Extension Market
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+360 Extension Market [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ## Thanks
 * [Bootstrap](https://github.com/twbs/bootstrap)

@@ -12,17 +12,13 @@
 ![JSONViewer Preview](https://github.com/oppoic/JSONViewer/blob/master/pic/jsonviewer.gif)
 
 ## 安装
-### 谷歌Chrome应用商店
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+谷歌Chrome应用商店 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### 微软Edge外接程序
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+微软Edge外接程序 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### 火狐浏览器附加组件
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+火狐浏览器附加组件 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### 360浏览器应用市场
-[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+360浏览器应用市场 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ## 鸣谢
 * [Bootstrap](https://github.com/twbs/bootstrap)
