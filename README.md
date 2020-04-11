@@ -12,16 +12,14 @@ format several JSON documents in one window, depends to your screen width, up to
 ### Chrome Web Store
 [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### Download .crx file
-[Click to Download](https://github.com/oppoic/JSONViewer/raw/master/crx/JSONViewer.crx)
+### Microsoft Edge Addons
+[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-### Chrome Extension Developer Mode
-1. Download project source code
-2. Open Chrome and go to: chrome://extensions/
-3. Enable "Developer mode"
-4. Click "Load unpacked extension"
-5. Select "JSONViewer/src" directory
-6. OK
+### Firefox Browser ADD-ONS
+[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+
+### 360 Extension Market
+[Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
 ## Thanks
 * [Bootstrap](https://github.com/twbs/bootstrap)
@@ -32,4 +30,4 @@ format several JSON documents in one window, depends to your screen width, up to
 * [toastr](https://github.com/CodeSeven/toastr)
 
 ## License
-See [LICENSE](https://github.com/oppoic/JSONViewer/blob/master/LICENSE) for more details.
+See [LICENSE](https://github.com/oppoic/JSONViewer/blob/guide/LICENSE) for more details.
