@@ -2,11 +2,11 @@
 
 # JSONViewer
 
+## Current Branch
+Source code of JSONViewer 360 Browser(from China) Extension.
+
 ## Description
 format several JSON documents in one window, depends to your screen width, up to 6.
-
-## 360 Branch
-Source code of JSONViewer 360 Browser(from China) Extension.
 
 ## Preview
 ![Preview](/pic/jsonviewer.png)
