@@ -2,11 +2,11 @@
 
 # JSONViewPro
 
+## current Branch
+Source code of JSONViewPro Firefox Add-on.
+
 ## Description
 format several JSON documents in one window, depends to your screen width, up to 6.
-
-## firefox Branch
-Source code of JSONViewPro Firefox Add-on.
 
 ## Preview
 ![Preview](/pic/jsonviewer.png)
