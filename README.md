@@ -2,11 +2,11 @@
 
 # JSONViewer
 
+## current Branch
+Source code of JSONViewer Chrome Extension.
+
 ## Description
 format several JSON documents in one window, depends to your screen width, up to 6.
-
-## master Branch
-Source code of JSONViewer Chrome Extension.
 
 ## Preview
 ![Preview](/pic/jsonviewer.png)
