@@ -1,9 +1,9 @@
 [English](README.md) | **中文**
 
-# JSONViewPro
+# JSONViewer
 
 ## 当前分支
-火狐浏览器JSONViewPro附加组件源码。
+火狐浏览器JSONViewer附加组件源码。
 
 ## 简介
 同时格式化多条Json字符串，在一个页面最大支持6个编辑器，取决于显示器宽度。

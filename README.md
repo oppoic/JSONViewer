@@ -1,9 +1,9 @@
 **English** | [中文](README.zh-cn.md)
 
-# JSONViewPro
+# JSONViewer
 
 ## Current Branch
-Source code of JSONViewPro Firefox Add-on.
+Source code of JSONViewer Firefox Add-on.
 
 ## Description
 format several JSON documents in one window, depends to your screen width, up to 6.
