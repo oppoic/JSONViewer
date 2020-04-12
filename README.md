@@ -2,7 +2,7 @@
 
 # JSONViewer
 
-## current Branch
+## Current Branch
 Source code of JSONViewer Chrome Extension.
 
 ## Description
