@@ -2,7 +2,7 @@
 
 # JSONViewPro
 
-## current Branch
+## Current Branch
 Source code of JSONViewPro Firefox Add-on.
 
 ## Description
