@@ -6,7 +6,7 @@
 format several JSON documents in one window, depends to your screen width, up to 6.
 
 ## Source Code
-Please change branch to check the source code.
+Switch branch to check the source code.
 
 ## Preview
 ![Preview](/pic/jsonviewer.png)
