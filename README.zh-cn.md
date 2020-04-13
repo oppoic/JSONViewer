@@ -15,7 +15,7 @@
 ## 安装
 #### 谷歌Chrome应用商店 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-#### 微软Edge外接程序 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### 微软Edge外接程序 [点击前往](https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm)
 
 #### 火狐浏览器附加组件 [点击前往](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 

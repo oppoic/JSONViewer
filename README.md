@@ -15,7 +15,7 @@ Switch branch to check the source code.
 ## Installation
 #### Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
 
-#### Microsoft Edge Addons [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### Microsoft Edge Addons [Click to Redirect](https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm)
 
 #### Firefox Browser ADD-ONS [Click to Redirect](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 
