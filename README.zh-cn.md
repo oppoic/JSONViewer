@@ -13,7 +13,7 @@
 ![预览](/pic/jsonviewer.gif)
 
 ## 安装
-[点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+[点击前往](https://www.cnblogs.com/oppoic/p/10444012.html)
 
 ## 鸣谢
 1. [Bootstrap](https://github.com/twbs/bootstrap)
