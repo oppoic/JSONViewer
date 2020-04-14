@@ -12,10 +12,8 @@ format several JSON documents in one window, depends to your screen width, up to
 ![Preview](/pic/jsonviewer.png)
 ![Preview](/pic/jsonviewer.gif)
 
-## Installation(choose one of three)
+## Installation(choose one of two)
 #### Chrome Web Store [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
-
-#### Download .crx file [Click to Redirect](/crx/JSONViewer.crx)
 
 #### Chrome Extension Developer Mode
 1. Download project source code

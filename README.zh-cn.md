@@ -12,10 +12,8 @@
 ![预览](/pic/jsonviewer.png)
 ![预览](/pic/jsonviewer.gif)
 
-## 安装（三选一）
+## 安装（二选一）
 #### 谷歌Chrome应用商店 [点击前往](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
-
-#### .crx文件安装 [点击前往](/crx/JSONViewer.crx)
 
 #### 开发者模式加载
 1. 下载本分支源码

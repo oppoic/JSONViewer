@@ -1,6 +1,6 @@
 {
   "name": "JSONViewer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "format several JSON documents in one window, depends to your screen width, up to 6.",
   "icons": {
     "16": "images/16.png",
