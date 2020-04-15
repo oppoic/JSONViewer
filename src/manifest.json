@@ -1,6 +1,6 @@
 {
   "name": "JSONViewer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "format several JSON documents in one window, depends to your screen width, up to 6.",
   "homepage_url": "https://github.com/oppoic/JSONViewer",
   "icons": {

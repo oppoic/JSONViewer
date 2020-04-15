@@ -2,44 +2,49 @@ var samplejson = [
     {
         "project": "JSONViewer",
         "description": "make JSON documents easy to read",
-        "author": "oppoic",
-        "addresses": [
-            "https://github.com/oppoic/JSONViewer",
-            "https://github.com/oppoic/JSONViewer.git",
-            "https://github.com/oppoic/JSONViewer/issues"
-        ]
+        "source code": "https://github.com/oppoic/JSONViewer",
+        "download": {
+            "Google Chrome": "https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca",
+            "Microsoft Edge": "https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm",
+            "Firefox": "https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/",
+            "360": "https://www.cnblogs.com/oppoic/p/10444012.html"
+        }
     },
     {
         "thanks": [
             {
-                "name": "Bootstrap",
-                "websites": ["https://getbootstrap.com/", "https://github.com/twbs/bootstrap"]
+                "project": "Bootstrap",
+                "github": "https://github.com/twbs/bootstrap"
             },
             {
-                "name": "ace",
-                "websites": ["https://ace.c9.io/", "https://github.com/ajaxorg/ace"]
+                "project": "ace",
+                "github": "https://github.com/ajaxorg/ace"
             },
             {
-                "name": "jsoneditor",
-                "websites": ["http://jsoneditoronline.org/", "https://github.com/josdejong/jsoneditor"]
+                "project": "jsoneditor",
+                "github": "https://github.com/josdejong/jsoneditor"
             },
             {
-                "name": "clipboard-polyfill",
-                "websites": ["https://garron.net/code/clipboard-polyfill/", "https://github.com/lgarron/clipboard-polyfill"]
+                "project": "clipboard-polyfill",
+                "github": "https://github.com/lgarron/clipboard-polyfill"
             },
             {
-                "name": "FileSaver.js",
-                "websites": ["https://eligrey.com/blog/saving-generated-files-on-the-client-side/", "https://github.com/eligrey/FileSaver.js"]
+                "project": "FileSaver.js",
+                "github": "https://github.com/eligrey/FileSaver.js"
             },
             {
-                "name": "toastr",
-                "websites": ["http://www.toastrjs.com", "https://github.com/CodeSeven/toastr"]
+                "project": "toastr",
+                "github": "https://github.com/CodeSeven/toastr"
             }
         ]
     },
     {
         "author": "oppoic",
         "location": "Hefei,China",
+        "email": [
+            "oppoic@163.com",
+            "opponic@gmail.com"
+        ],
         "blog": "https://www.cnblogs.com/oppoic/",
         "github": "https://github.com/oppoic",
         "stackoverflow": "https://stackoverflow.com/users/1661857/oppoic",
