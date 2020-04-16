@@ -19,7 +19,7 @@ Switch branch to check the source code.
 
 #### Firefox Browser ADD-ONS [Click to Redirect](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 
-#### 360 Browser Extension Market [Click to Redirect](https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca)
+#### 360 Browser Extension Market [Click to Redirect](https://www.cnblogs.com/oppoic/p/10444012.html)
 
 ## Thanks
 1. [Bootstrap](https://github.com/twbs/bootstrap)
