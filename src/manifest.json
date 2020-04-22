@@ -1,7 +1,7 @@
 {
   "name": "JSONViewer",
   "version": "1.0.4",
-  "description": "同时格式化多条Json字符串，在一个页面最大支持6个编辑器，取决于显示器宽度。",
+  "description": "同时格式化多条JSON字符串，在一个页面最大支持6个编辑器，取决于显示器宽度。",
   "icons": {
     "16": "images/16.png",
     "48": "images/48.png",
