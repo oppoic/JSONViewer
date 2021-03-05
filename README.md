@@ -1,4 +1,7 @@
-**English** | [中文](README.zh-cn.md)
+<p align="center">
+    <span>English</span> |  
+    <a href="README.zh-cn.md">中文</a>
+</p>
 
 # JSONViewer
 
