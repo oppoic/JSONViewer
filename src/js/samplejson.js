@@ -11,6 +11,14 @@ var samplejson = [
         }
     },
     {
+        "project": "ModifyAjaxResponse",
+        "description": "Modify response text of ajax requests",
+        "source code": "https://github.com/oppoic/ModifyAjaxResponse",
+        "download": {
+            "Google Chrome": "https://chrome.google.com/webstore/detail/modifyajaxresponse/odpiadnfijfeggnnodoaaphkkjkmpnia"
+        }
+    },
+    {
         "thanks": [
             {
                 "project": "Bootstrap",
