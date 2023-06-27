@@ -16,38 +16,43 @@ var jsonEditorOptions = {
 };
 
 $(function () {
-    var maxBoxCount = getMaxBoxCount();
-    var jsonViewerBoxCount = localStorage.jsonViewerBoxCount == undefined ? 0 : parseInt(localStorage.jsonViewerBoxCount);
-    jsonViewerBoxCount = jsonViewerBoxCount > maxBoxCount ? maxBoxCount : jsonViewerBoxCount;
-
-    var showBoxCount = jsonViewerBoxCount == 0 ? maxBoxCount : jsonViewerBoxCount;
-    var className = getClass(showBoxCount);
-
-    for (i = 0; i < showBoxCount; i++) {
-        $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
-    }
-
-    var cnr = $("[data-tgt='container']");
-    var editor;
-    $.each(cnr, function (i, v) {
-        editor = new JSONEditor(v, jsonEditorOptions);
-        editor.setText("");
-
-        jsonEditorArr.push(editor);
-    });
-    setHeight();
-    addIconHideAndShow();
-
-    $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
-
-    var jsonMenus = $("div.jsoneditor-mode-code .jsoneditor-menu");
-    $.each(jsonMenus, function (i, v) {
-        if (i == 0) {
-            $(v).append(jsonMenuRightNoClose);
+    chrome.storage.local.get(['boxCount'], function (result) {
+        var maxBoxCount = getMaxBoxCount();
+        var showBoxCount = 0;
+        if (result.hasOwnProperty('boxCount')) {
+            showBoxCount = result.boxCount > maxBoxCount ? maxBoxCount : result.boxCount;
         }
         else {
-            $(v).append(jsonMenuRight);
+            showBoxCount = maxBoxCount;
         }
+
+        var className = getClass(showBoxCount);
+        for (i = 0; i < showBoxCount; i++) {
+            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
+        }
+
+        var cnr = $("[data-tgt='container']");
+        var editor;
+        $.each(cnr, function (i, v) {
+            editor = new JSONEditor(v, jsonEditorOptions);
+            editor.setText("");
+
+            jsonEditorArr.push(editor);
+        });
+        setHeight();
+        addIconHideAndShow();
+
+        $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
+
+        var jsonMenus = $("div.jsoneditor-mode-code .jsoneditor-menu");
+        $.each(jsonMenus, function (i, v) {
+            if (i === 0) {
+                $(v).append(jsonMenuRightNoClose);
+            }
+            else {
+                $(v).append(jsonMenuRight);
+            }
+        });
     });
 });
 
@@ -94,7 +99,7 @@ function reSizeBoxes() {
 
 function reFormatJson() {
     $.each(jsonEditorArr, function (i, v) {
-        if (v.getText() != '') {
+        if (v.getText() !== '') {
             var currentBox = $('.container-fluid .mainBox')[i];
             $(currentBox).find('.jsoneditor-menu button.jsoneditor-format').click();
         }
@@ -102,9 +107,7 @@ function reFormatJson() {
 }
 
 $("body").on("click", ".tool-right i", function () {
-    var mainBoxes = $(".container-fluid .mainBox");
-    localStorage.jsonViewerBoxCount = mainBoxes.length + 1;
-
+    chrome.storage.local.set({ boxCount: $(".container-fluid .mainBox").length + 1 });
     $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
 
     var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
@@ -124,16 +127,16 @@ $("body").on("click", ".tool-right i", function () {
 
 $("body").on("click", ".btn-group-right button", function () {
     var nv = this.attributes[2].nodeValue;
-    if (nv != undefined) {
+    if (nv !== undefined) {
         var idx = $(this).parents(".mainBox").index();
 
-        if (nv == "clear") {
+        if (nv === "clear") {
             jsonEditorArr[idx].setText('');
         }
-        else if (nv == "copy") {
+        else if (nv === "copy") {
             var jsonCopy = jsonEditorArr[idx].getText();
-            if (jsonCopy == "") {
-                showTip(3, "Can't find any Content");
+            if (jsonCopy === "") {
+                showTip(4, "Nothing to copy");
             }
             else {
                 clipboard.writeText(jsonCopy).then(function () {
@@ -143,33 +146,31 @@ $("body").on("click", ".btn-group-right button", function () {
                 });
             }
         }
-        else if (nv == "paste") {
+        else if (nv === "paste") {
             clipboard.readText().then(function (result) {
                 jsonEditorArr[idx].setText(result);
             }, function (err) {
                 showTip(4, err);
             });
         }
-        else if (nv == "download") {
+        else if (nv === "download") {
             var jsonDl = jsonEditorArr[idx].getText();
-            if (jsonDl == "") {
-                showTip(3, "Can't find any Content");
+            if (jsonDl === "") {
+                showTip(4, "Nothing to download");
             }
             else {
                 var blob = new Blob([jsonDl], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, "JSONViewer-" + Math.floor(new Date().getTime() / 1000) + ".json");
             }
         }
-        else if (nv == "close") {
+        else if (nv === "close") {
             var parentMainBox = $(this).parents(".mainBox");
             var idx = $(this).parents(".mainBox").index();
             jsonEditorArr[idx].destroy();
             parentMainBox.remove();
 
             jsonEditorArr.splice(idx, 1);
-
-            var mainBoxes = $(".container-fluid .mainBox");
-            localStorage.jsonViewerBoxCount = mainBoxes.length;
+            chrome.storage.local.set({ boxCount: $(".container-fluid .mainBox").length });
 
             reSizeBoxes();
             addIconHideAndShow();
@@ -238,37 +239,6 @@ function getMaxBoxCount() {
         maxBoxCount = 6;
     }
     return maxBoxCount;
-}
-
-function getNowFormatDate() {
-    var date = new Date();
-
-    var seperator1 = "-";
-    var seperator2 = "-";
-
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    var hour = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
-
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    if (hour >= 0 && hour <= 9) {
-        hour = "0" + hour;
-    }
-    if (minutes >= 0 && minutes <= 9) {
-        minutes = "0" + minutes;
-    }
-    if (seconds >= 0 && seconds <= 9) {
-        seconds = "0" + seconds;
-    }
-
-    return date.getFullYear() + seperator1 + month + seperator1 + strDate + "_" + hour + seperator2 + minutes + seperator2 + seconds;
 }
 
 function showTip(type, msg) {
