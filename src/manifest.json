@@ -1,22 +1,21 @@
 {
+  "manifest_version": 3,
   "name": "JSONViewer",
-  "version": "1.0.4",
-  "description": "format several JSON documents in one window, depends to your screen width, up to 6.",
+  "description": "format several JSON documents in one window, depends to your screen width, up to 6",
+  "version": "2.0.0",
   "icons": {
     "16": "images/16.png",
     "48": "images/48.png",
     "128": "images/128.png"
   },
-  "browser_action": {
-    "default_icon": "images/16.png",
-    "default_title": "JSONViewer"
+  "action": {
+    "default_icon": {
+      "16": "images/16.png",
+      "48": "images/48.png",
+      "128": "images/128.png"
+    }
   },
   "background": {
-    "scripts": [
-      "js/background.js"
-    ],
-    "persistent": false
-  },
-  "offline_enabled": true,
-  "manifest_version": 2
+    "service_worker": "js/background.js"
+  }
 }

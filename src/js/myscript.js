@@ -1,3 +1,5 @@
+console.log('ModifyAjaxResponse,Modify response text of ajax requests. https://github.com/oppoic/ModifyAjaxResponse  https://chrome.google.com/webstore/detail/modifyajaxresponse/odpiadnfijfeggnnodoaaphkkjkmpnia');
+
 var insertHtmlPre = '<div class="';
 var insertStylePre = 'col-xs-12 col-sm-12 ';
 var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div data-tgt="container"></div></div>';
@@ -155,7 +157,7 @@ $("body").on("click", ".btn-group-right button", function () {
             }
             else {
                 var blob = new Blob([jsonDl], { type: "text/plain;charset=utf-8" });
-                saveAs(blob, "jsonviewer_" + getNowFormatDate() + ".txt");
+                saveAs(blob, "JSONViewer-" + Math.floor(new Date().getTime() / 1000) + ".json");
             }
         }
         else if (nv == "close") {
@@ -271,7 +273,6 @@ function getNowFormatDate() {
 
 function showTip(type, msg) {
     toastr.clear();
-
     var level = '';
     var timeout = 0;
     var msgDefault = '';
@@ -279,32 +280,32 @@ function showTip(type, msg) {
         case 1:
         default:
             level = 'success';
-            timeout = 3000;
+            timeout = 2000;
             msgDefault = 'success';
             break;
         case 2:
             level = 'info';
-            timeout = 5000;
+            timeout = 3000;
             msgDefault = 'info';
             break;
         case 3:
             level = 'warning';
-            timeout = 5000;
+            timeout = 3000;
             msgDefault = 'warning';
             break;
         case 4:
             level = 'error';
-            timeout = 10000;
+            timeout = 5000;
             msgDefault = 'error';
             break;
     }
 
     toastr.options = {
-        "positionClass": "toast-bottom-right",
+        "positionClass": "toast-bottom-left",
         "timeOut": timeout
     }
 
-    if (msg == undefined || msg == '') {
+    if (typeof (msg) == "undefined" || msg === '') {
         toastr[level](msgDefault);
     }
     else {

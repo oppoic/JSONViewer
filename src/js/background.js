@@ -1,3 +1,3 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.action.onClicked.addListener(() => {
     chrome.tabs.create({ url: 'jsonviewer.html' })
 });
