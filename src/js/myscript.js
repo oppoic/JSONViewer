@@ -175,7 +175,7 @@ $("body").on("click", ".btn-group-right button", function () {
         }
     }
     else {
-        console.log("nodeValue is undefined");
+        showTip(4, "nodeValue is undefined");
     }
 });
 
