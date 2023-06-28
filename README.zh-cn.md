@@ -28,10 +28,9 @@
 
 ## 鸣谢
 1. [Bootstrap](https://github.com/twbs/bootstrap)
-2. [ace](https://github.com/ajaxorg/ace)
-3. [jsoneditor](https://github.com/josdejong/jsoneditor)
-4. [FileSaver.js](https://github.com/eligrey/FileSaver.js)
-5. [toastr](https://github.com/CodeSeven/toastr)
+2. [jsoneditor](https://github.com/josdejong/jsoneditor)
+3. [FileSaver.js](https://github.com/eligrey/FileSaver.js)
+4. [toastr](https://github.com/CodeSeven/toastr)
 
 ## 软件许可
 [点击查看](LICENSE)

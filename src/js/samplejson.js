@@ -25,10 +25,6 @@ var samplejson = [
                 "github": "https://github.com/twbs/bootstrap"
             },
             {
-                "project": "ace",
-                "github": "https://github.com/ajaxorg/ace"
-            },
-            {
                 "project": "jsoneditor",
                 "github": "https://github.com/josdejong/jsoneditor"
             },
