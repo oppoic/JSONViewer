@@ -16,19 +16,14 @@ var jsonEditorOptions = {
 };
 
 $(function () {
-    chrome.storage.local.get(['boxCount'], function (result) {
-        var maxBoxCount = getMaxBoxCount();
-        var showBoxCount = 0;
+    chrome.storage.local.get(["boxCount"]).then((result) => {
+        var showBoxCount = getMaxBoxCount();
         if (result.hasOwnProperty('boxCount')) {
-            showBoxCount = result.boxCount > maxBoxCount ? maxBoxCount : result.boxCount;
-        }
-        else {
-            showBoxCount = maxBoxCount;
+            showBoxCount = result.boxCount > showBoxCount ? showBoxCount : result.boxCount;
         }
 
-        var className = getClass(showBoxCount);
         for (i = 0; i < showBoxCount; i++) {
-            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + className + insertHtml);
+            $(".container-fluid .row").append(insertHtmlPre + insertStylePre + getClass(showBoxCount) + insertHtml);
         }
 
         var cnr = $("[data-tgt='container']");
@@ -43,7 +38,6 @@ $(function () {
         addIconHideAndShow();
 
         $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
-
         var jsonMenus = $("div.jsoneditor-mode-code .jsoneditor-menu");
         $.each(jsonMenus, function (i, v) {
             if (i === 0) {
@@ -70,15 +64,11 @@ $(window).bind('resize', function () {
 });
 
 function setHeight() {
-    var wHeight = $(window).height();
-    $("[data-tgt='container']").height(wHeight);
+    $("[data-tgt='container']").height($(window).height());
 }
 
 function addIconHideAndShow() {
-    var maxBoxCount = getMaxBoxCount();
-    var jsonViewerBoxCount = $(".container-fluid .mainBox").length;
-
-    if (jsonViewerBoxCount >= maxBoxCount) {
+    if ($(".container-fluid .mainBox").length >= getMaxBoxCount()) {
         $(".tool-right").hide();
         $(".mainBox").css("padding-right", "10px");
     }
@@ -90,9 +80,8 @@ function addIconHideAndShow() {
 
 function reSizeBoxes() {
     var mainBoxes = $(".container-fluid .mainBox");
-    var className = getClass(mainBoxes.length);
     $.each(mainBoxes, function (i, v) {
-        $(v).attr("class", insertStylePre + className + " mainBox");
+        $(v).attr("class", insertStylePre + getClass(mainBoxes.length) + " mainBox");
     });
     reFormatJson();
 }
@@ -107,22 +96,23 @@ function reFormatJson() {
 }
 
 $("body").on("click", ".tool-right i", function () {
-    chrome.storage.local.set({ boxCount: $(".container-fluid .mainBox").length + 1 });
-    $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
+    chrome.storage.local.set({ boxCount: $(".container-fluid .mainBox").length + 1 }).then(() => {
+        $(this).parents(".mainBox").after(insertHtmlPre + insertStylePre + insertHtml);
 
-    var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
-    var editor = new JSONEditor(boxAdd[0], jsonEditorOptions);
-    editor.setText("");
+        var boxAdd = $(this).parents(".mainBox").next().children("[data-tgt='container']");
+        var editor = new JSONEditor(boxAdd[0], jsonEditorOptions);
+        editor.setText("");
 
-    var idx = $(this).parents(".mainBox").next().index();
-    jsonEditorArr.splice(idx, 0, editor);
+        var idx = $(this).parents(".mainBox").next().index();
+        jsonEditorArr.splice(idx, 0, editor);
 
-    reSizeBoxes();
-    setHeight();
-    addIconHideAndShow();
+        reSizeBoxes();
+        setHeight();
+        addIconHideAndShow();
 
-    $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
-    $(this).parents(".mainBox").next().find(".jsoneditor-menu").append(jsonMenuRight);
+        $("div.jsoneditor-mode-code .jsoneditor-menu a.jsoneditor-poweredBy").remove();
+        $(this).parents(".mainBox").next().find(".jsoneditor-menu").append(jsonMenuRight);
+    });
 });
 
 $("body").on("click", ".btn-group-right button", function () {
@@ -139,19 +129,23 @@ $("body").on("click", ".btn-group-right button", function () {
                 showTip(4, "Nothing to copy");
             }
             else {
-                clipboard.writeText(jsonCopy).then(function () {
-                    showTip(1, "Copied to Clipboard");
-                }, function (err) {
+                try {
+                    navigator.clipboard.writeText(jsonCopy).then(() => {
+                        showTip(1, "Copied to clipboard");
+                    }, () => {
+                        showTip(4, "Copied failed");
+                    });
+                } catch (err) {
                     showTip(4, err);
-                });
+                }
             }
         }
         else if (nv === "paste") {
-            clipboard.readText().then(function (result) {
-                jsonEditorArr[idx].setText(result);
-            }, function (err) {
+            try {
+                navigator.clipboard.readText().then((clipText) => (jsonEditorArr[idx].setText(clipText)));
+            } catch (err) {
                 showTip(4, err);
-            });
+            }
         }
         else if (nv === "download") {
             var jsonDl = jsonEditorArr[idx].getText();
@@ -170,10 +164,10 @@ $("body").on("click", ".btn-group-right button", function () {
             parentMainBox.remove();
 
             jsonEditorArr.splice(idx, 1);
-            chrome.storage.local.set({ boxCount: $(".container-fluid .mainBox").length });
-
-            reSizeBoxes();
-            addIconHideAndShow();
+            chrome.storage.local.set({ boxCount: $(".container-fluid .mainBox").length }).then(() => {
+                reSizeBoxes();
+                addIconHideAndShow();
+            });
         }
         else {
             console.log("illegal operate");
@@ -186,8 +180,15 @@ $("body").on("click", ".btn-group-right button", function () {
 });
 
 $("body").on("click", ".btn-group-right a", function () {
-    var idx = $(this).parents(".mainBox").index();
-    jsonEditorArr[idx].set(samplejson[Math.floor((Math.random() * samplejson.length))]);
+    chrome.storage.local.get(["sjIndex"]).then((result) => {
+        var sjIndex = 0;
+        if (result.hasOwnProperty('sjIndex')) {
+            sjIndex = result.sjIndex >= samplejson.length - 1 ? 0 : result.sjIndex + 1;
+        }
+        chrome.storage.local.set({ sjIndex: sjIndex }).then(() => {
+            jsonEditorArr[$(this).parents(".mainBox").index()].set(samplejson[sjIndex]);
+        });
+    });
 });
 
 function getClass(boxCount) {

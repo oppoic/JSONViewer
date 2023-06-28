@@ -33,10 +33,6 @@ var samplejson = [
                 "github": "https://github.com/josdejong/jsoneditor"
             },
             {
-                "project": "clipboard-polyfill",
-                "github": "https://github.com/lgarron/clipboard-polyfill"
-            },
-            {
                 "project": "FileSaver.js",
                 "github": "https://github.com/eligrey/FileSaver.js"
             },

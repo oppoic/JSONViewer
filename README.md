@@ -30,9 +30,8 @@ format several JSON documents in one window, depends to your screen width, up to
 1. [Bootstrap](https://github.com/twbs/bootstrap)
 2. [ace](https://github.com/ajaxorg/ace)
 3. [jsoneditor](https://github.com/josdejong/jsoneditor)
-4. [clipboard-polyfill](https://github.com/lgarron/clipboard-polyfill)
-5. [FileSaver.js](https://github.com/eligrey/FileSaver.js)
-6. [toastr](https://github.com/CodeSeven/toastr)
+4. [FileSaver.js](https://github.com/eligrey/FileSaver.js)
+5. [toastr](https://github.com/CodeSeven/toastr)
 
 ## License
 See [LICENSE](LICENSE) for more details.
