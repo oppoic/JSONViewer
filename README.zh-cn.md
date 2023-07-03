@@ -6,10 +6,10 @@
 # JSONViewer
 
 ## 当前分支
-谷歌Chrome浏览器JSONViewer插件源码。
+谷歌Chrome、微软Edge浏览器，JSONViewer插件源码
 
 ## 简介
-同时格式化多条JSON字符串，在一个页面最大支持6个编辑器，取决于显示器宽度。
+同时格式化多条JSON字符串，在一个页面最大支持6个编辑器，取决于显示器宽度
 
 ## 预览
 ![预览](/pic/jsonviewer.png)
