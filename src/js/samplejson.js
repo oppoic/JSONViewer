@@ -1,13 +1,12 @@
 var samplejson = [
     {
         "project": "JSONViewer",
-        "description": "make JSON documents easy to read",
+        "description": "Format several JSON documents in one window, depends to your screen width, up to 6",
         "source code": "https://github.com/oppoic/JSONViewer",
         "download": {
             "Google Chrome": "https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca",
             "Microsoft Edge": "https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm",
-            "Firefox": "https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/",
-            "360": "https://www.cnblogs.com/oppoic/p/10444012.html"
+            "Firefox": "https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/"
         }
     },
     {
@@ -15,7 +14,8 @@ var samplejson = [
         "description": "Modify response text of ajax requests",
         "source code": "https://github.com/oppoic/ModifyAjaxResponse",
         "download": {
-            "Google Chrome": "https://chrome.google.com/webstore/detail/modifyajaxresponse/odpiadnfijfeggnnodoaaphkkjkmpnia"
+            "Google Chrome": "https://chrome.google.com/webstore/detail/modifyajaxresponse/odpiadnfijfeggnnodoaaphkkjkmpnia",
+            "Microsoft Edge": "https://microsoftedge.microsoft.com/addons/detail/koeofaphicbgllfobkdbacgmcpnaifhn"
         }
     },
     {
@@ -47,7 +47,6 @@ var samplejson = [
         ],
         "blog": "https://www.cnblogs.com/oppoic/",
         "github": "https://github.com/oppoic",
-        "stackoverflow": "https://stackoverflow.com/users/1661857/oppoic",
         "company": {
             "name": "septnet",
             "website": "https://www.7net.cc/"

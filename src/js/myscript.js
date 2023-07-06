@@ -1,5 +1,3 @@
-console.log('ModifyAjaxResponse,Modify response text of ajax requests. https://github.com/oppoic/ModifyAjaxResponse  https://chrome.google.com/webstore/detail/modifyajaxresponse/odpiadnfijfeggnnodoaaphkkjkmpnia');
-
 var insertHtmlPre = '<div class="';
 var insertStylePre = 'col-xs-12 col-sm-12 ';
 var insertHtml = ' mainBox"><div class="tool-right"><i class="fa fa-plus fa-lg"></i></div><div data-tgt="container"></div></div>';

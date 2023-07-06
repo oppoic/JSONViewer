@@ -9,7 +9,7 @@
 Source code of JSONViewer Chrome Extension, as well as Microsoft edge
 
 ## Description
-format several JSON documents in one window, depends to your screen width, up to 6
+Format several JSON documents in one window, depends to your screen width, up to 6
 
 ## Preview
 ![Preview](/pic/jsonviewer.png)
