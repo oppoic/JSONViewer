@@ -6,14 +6,14 @@
 
 <div align="center">
 
-### 浏览器插件，修改ajax请求的返回值
+### 浏览器插件，同时格式化多条JSON字符串，在一个页面最大支持6个编辑器，取决于显示器宽度
 
 [English](README.md) &nbsp;|&nbsp; 简体中文
 </div>
 
 ## 应用商店安装
-<a href="https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca"><img src="./show/chrome.png" width="200" alt="Get JSONViewer for Chromium"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm"><img src="./show/edge.png" width="160" alt="Get JSONViewer for Microsoft Edge"></a>
+<a href="https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca"><img src="./pic/chrome.png" width="200" alt="Get JSONViewer for Chromium"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm"><img src="./pic/edge.png" width="160" alt="Get JSONViewer for Microsoft Edge"></a>
 
 ## 本地安装
 1. [下载](https://github.com/oppoic/JSONViewer/releases) 最新的 **JSONViewer.zip**
