@@ -27,7 +27,7 @@
 仅重写xhr和fetch方法的返回实体，F12开发者工具-网络面板里的返回值不会变
 
 ## 预览
-![预览](/pic/jsonviewer.gif)
+![预览](/pic/JSONViewer.gif)
 
 ## 鸣谢
 * [Bootstrap](https://github.com/twbs/bootstrap)

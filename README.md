@@ -27,7 +27,7 @@ Source code of JSONViewer Chrome Extension, as well as Microsoft edge
 6. OK
 
 ## Preview
-![Preview](/pic/jsonviewer.gif)
+![Preview](/pic/JSONViewer.gif)
 
 ## Thanks
 * [Bootstrap](https://github.com/twbs/bootstrap)
