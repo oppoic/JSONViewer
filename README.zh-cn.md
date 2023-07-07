@@ -11,6 +11,9 @@
 [English](README.md) &nbsp;|&nbsp; 简体中文
 </div>
 
+## 分支说明
+Chrome、Edge浏览器JSONViewer插件源码
+
 ## 应用商店安装
 <a href="https://chrome.google.com/webstore/detail/jsonviewer/khbdpaabobknhhlpglenglkkhdmkfnca"><img src="./pic/chrome.png" width="200" alt="Get JSONViewer for Chromium"></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://microsoftedge.microsoft.com/addons/detail/plbmlbokmdfffnjgepkiknofbbljempm"><img src="./pic/edge.png" width="160" alt="Get JSONViewer for Microsoft Edge"></a>
@@ -22,9 +25,6 @@
 4. 点击"加载已解压的扩展程序"
 5. 选择源码目录：JSONViewer/src
 6. 确认
-
-## 简介
-仅重写xhr和fetch方法的返回实体，F12开发者工具-网络面板里的返回值不会变
 
 ## 预览
 ![预览](/pic/JSONViewer.gif)
