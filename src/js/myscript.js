@@ -222,10 +222,10 @@ function getMaxBoxCount() {
     if (screenWidth < 1024) {
         maxBoxCount = 1;
     }
-    else if (screenWidth >= 1024 && screenWidth < 1920) {
+    else if (screenWidth >= 1024 && screenWidth < 1900) {
         maxBoxCount = 2;
     }
-    else if (screenWidth >= 1920 && screenWidth < 2560) {//1080p
+    else if (screenWidth >= 1900 && screenWidth < 2560) {//1080p
         maxBoxCount = 3;
     }
     else if (screenWidth >= 2560 && screenWidth < 3840) {//2k
