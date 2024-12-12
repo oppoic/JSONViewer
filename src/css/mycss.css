@@ -1,10 +1,10 @@
-.mainBox{
+.mainBox {
     position: relative;
-    padding: 0px 30px 0px 10px;
+    padding: 2px 5px;
     box-sizing: border-box;
 }
 
-.tool-right{
+.tool-right {
     position: absolute;
     top: 30px;
     right: 10px;
@@ -19,10 +19,10 @@
     float: right;
 }
 
-.btn-group-right a{
+.btn-group-right a {
     width: 45px;
     margin: 8px 2px 0px 0px;
-    padding: 0;    
+    padding: 0;
 }
 
 div.btn-group-right>button {
@@ -32,17 +32,18 @@ div.btn-group-right>button {
     padding: 0;
     border-radius: 2px;
     border: 1px solid transparent;
-    background-color:#3883fa;
-    font-family: arial,sans-serif;
+    background-color: #3883fa;
+    font-family: arial, sans-serif;
 }
 
 div.btn-group-right>button:hover {
-    background-color: rgba(255,255,255,.2);
-    border: 1px solid rgba(255,255,255,.4)
+    background-color: rgba(255, 255, 255, .2);
+    border: 1px solid rgba(255, 255, 255, .4)
 }
 
-div.btn-group-right>button:active,div.btn-group-right>button:focus {
-    background-color: rgba(255,255,255,.3)
+div.btn-group-right>button:active,
+div.btn-group-right>button:focus {
+    background-color: rgba(255, 255, 255, .3)
 }
 
 /*Bootstrap 5/12*/
@@ -50,8 +51,8 @@ div.btn-group-right>button:active,div.btn-group-right>button:focus {
 .col-lg-1-5 {
     position: relative;
     min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 @media (min-width: 992px) {

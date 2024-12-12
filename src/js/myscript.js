@@ -62,13 +62,13 @@ $(window).bind('resize', function () {
 });
 
 function setHeight() {
-    $("[data-tgt='container']").height($(window).height());
+    $("[data-tgt='container']").height($(window).height() - 4);
 }
 
 function addIconHideAndShow() {
     if ($(".container-fluid .mainBox").length >= getMaxBoxCount()) {
         $(".tool-right").hide();
-        $(".mainBox").css("padding-right", "10px");
+        $(".mainBox").css("padding-right", "5px");
     }
     else {
         $(".tool-right").show();
