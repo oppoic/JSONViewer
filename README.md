@@ -18,7 +18,7 @@ format several JSON documents in one window, depends to your screen width, up to
 ## Installation
 [Click to Redirect](https://addons.mozilla.org/zh-CN/firefox/addon/jsonviewpro/)
 
-## Thanks
+## Acknowledgements
 1. [Bootstrap](https://github.com/twbs/bootstrap)
 2. [ace](https://github.com/ajaxorg/ace)
 3. [jsoneditor](https://github.com/josdejong/jsoneditor)
