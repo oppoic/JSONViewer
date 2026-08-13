@@ -19,7 +19,7 @@ Chrome、Edge浏览器JSONViewer插件源码
 ## 预览
 ![预览](/pic/JSONViewer.gif)
 
-## 鸣谢
+## 致谢
 * [Bootstrap](https://github.com/twbs/bootstrap)
 * [jsoneditor](https://github.com/josdejong/jsoneditor)
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js)
