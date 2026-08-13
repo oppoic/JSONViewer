@@ -18,7 +18,7 @@
 ## 安装
 [点击前往](https://www.cnblogs.com/oppoic/p/10444012.html)
 
-## 鸣谢
+## 致谢
 1. [Bootstrap](https://github.com/twbs/bootstrap)
 2. [ace](https://github.com/ajaxorg/ace)
 3. [jsoneditor](https://github.com/josdejong/jsoneditor)
