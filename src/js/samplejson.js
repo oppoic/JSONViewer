@@ -11,7 +11,7 @@ var samplejson = [
         }
     },
     {
-        "thanks": [
+        "acknowledgements": [
             {
                 "project": "Bootstrap",
                 "github": "https://github.com/twbs/bootstrap"
